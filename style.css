@@ -1,20 +1,21 @@
 *
 .carousel-item{
-    height: 500px;
+    height: 590px;
+    width: 1400px;
 }
 
 .carousel-image-1{
-    background-image: url('pic4.jpg');
+    background-image: url('Picture5.jpg');
     background-size: cover;
 }
 
 .carousel-image-2{
-    background-image: url('pic3.jpg');
+    background-image: url('img2.jpg');
     background-size: cover;
 }
 
 .carousel-image-3{
-    background-image: url('pic5.jpg');
+    background-image: url('img4.jpg');
     background-size: cover;
 }
 .dark-overlay{
