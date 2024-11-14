@@ -1,0 +1,145 @@
+*
+.carousel-item{
+    height: 500px;
+}
+
+.carousel-image-1{
+    background-image: url('pic4.jpg');
+    background-size: cover;
+}
+
+.carousel-image-2{
+    background-image: url('pic3.jpg');
+    background-size: cover;
+}
+
+.carousel-image-3{
+    background-image: url('pic5.jpg');
+    background-size: cover;
+}
+.dark-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+}
+.modal-body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.from-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.from-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea.from-control {
+    resize: vertical;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.modal-footer .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+.row {
+    margin-bottom: 30px;
+}
+
+.row {
+    margin: 0 auto;
+    max-width: 90%; /* ปรับให้แถวทั้งหมดเข้ามาด้านใน */
+}
+
+/* ตั้งค่าขนาดคงที่ให้ภาพ และขยับภาพเข้ามา */
+#hover {
+    padding: 10px; /* เพิ่ม padding รอบ ๆ ภาพ */
+}
+
+#hover img {
+    width: 100%;
+    height: 250px; /* หรือความสูงที่ต้องการ */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* เพิ่มเอฟเฟกต์ขยายภาพและเงาเมื่อ hover */
+#hover img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* สร้าง overlay สีเข้มพร้อมกับข้อความ */
+#hover {
+    position: relative;
+}
+
+#hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+#hover:hover::after {
+    opacity: 1;
+}
+#about {
+    min-height: 200px;
+    position: relative;
+    background-image: url("https://cdn.pixabay.com/photo/2023/10/30/05/53/highway-8351864_640.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: black;
+    background-attachment: fixed;
+}
