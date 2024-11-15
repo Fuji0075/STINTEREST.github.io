@@ -18,12 +18,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Charm&family=Charmonman&display=swap" rel="stylesheet">
+    <style>
+        /* เพิ่มใน style.css หรือใน <style> ภายใน <head> */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
+    <div id="ad-popup" class="ad-popup">
+        <div class="ad-popup-content">
+            <span id="close-ad" class="close-ad">&times;</span>
+            <img src="img13.jpg" alt="โปรโมชั่นโดนๆ" width="100%">
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
-            <a href="index.html" class="navbar-brand">S.T.INTEREST 2006 CO.,LTD</a>
+            <a href="index.html" class="navbar-brand">
+                <img src="Picture1.1.png" alt="S.T.INTEREST 2006 CO.,LTD Logo" class="logo">
+                S.T.INTEREST 2006 CO.,LTD
+            </a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +57,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">บริการ</a>
-                      </li>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,8 +74,8 @@
                 <div class="carousel-item carousel-image-1 active">
                     <div class="container">
                         <div class="carousel-caption d-none d-sm-block">
-                            <h1 class="display-3">AIR CONDITIONING</h1>
-                            <p>AIR CONDITIONING</p>
+                            <h1 class="display-3">AIR CONDISIONING</h1>
+                            <p>AIR CONDISIONING</p>
                         </div>
                     </div>
                 </div>
@@ -81,184 +104,299 @@
                 </button>
             </div>
         </div>
-        <section id="service" class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 text-center mb-4">
-                        <i class="fa-solid fa-users fa-3x mb-2"></i>
-                        <h3>AIR CONDITIONING</h3>
-                        <p>จำหน่าย ติดตั้ง ซ่อมบำรุง แอร์บ้านและโรงงาน ครบจบที่เดียว</p>
-                    </div>
-                    <div class="col-md-4 text-center mb-4">
-                        <i class="fa-solid fa-crown fa-3x mb-2"></i>
-                        <h3>S.T.INTEREST 2006 CO.,LTD</h3>
-                        <p>93 หมู่ 5 ซ.ด่านสำโรง 10 สุขุมวิท 113 ต.สำโรงเหนือ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10270
-                            93 Moo 5 Soi Dhansamrong 10 Sukhumvit 113 Rd., Samrongnuar, Muang Samutprakarn, Samutprakarn
-                            โทร 02-3842056-8 , 090-9463955 เลขประจำตัวผู้เสียภาษี 0115549000554
-                        </p>
-                    </div>
-                    <div class="col-md-4 text-center mb-4">
-                        <i class="fa-solid fa-shield fa-3x mb-2"></i>
-                        <h3>CCTV</h3>
-                        <p>ปลอดภัย มั่นใจ ครอบคลุม</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </section>
-    <!-- Modal worke -->
-    <div class="modal fade" id="mymodal" tabindex="-1" aria-labelledby="mymodalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mymodalLabel">ติดต่องาน</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section id="service" class="py-5 fade-in-element">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center mb-4 hover-effect">
+                    <i class="fa-solid fa-users fa-3x mb-2"></i>
+                    <h3>AIR CONDISIONING</h3>
+                    <p>จำหน่าย ติดตั้ง ซ่อมบำรุง แอร์บ้านและโรงงาน</p>
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="ป้อนอีเมล" class="form-control">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="subject">หัวข้อ</label>
-                            <input type="text" id="subject" placeholder="เสนอหัวข้องาน" class="form-control">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="details">รายละเอียด</label>
-                            <textarea id="details" cols="30" rows="5" class="form-control"
-                                placeholder="ป้อนรายละเอียด"></textarea>
-                        </div>
-                    </form>
+                <div class="col-md-4 text-center mb-4 hover-effect">
+                    <i class="fa-solid fa-crown fa-3x mb-2"></i>
+                    <h3>S.T.INTEREST 2006 CO.,LTD</h3>
+                    <p>93 หมู่ 5 ซ.ด่านสำโรง 10 สุขุมวิท 113 ต.สำโรงเหนือ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10270
+                        93 Moo 5 Soi Dhansamrong 10 Sukhumvit 113 Rd., Samrongnuar, Muang Samutprakarn, Samutprakarn
+                        โทร 02-3842056-8 , 090-9463955 เลขประจำตัวผู้เสียภาษี 0115549000554
+                    </p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                    <button type="button" class="btn btn-primary">ส่ง</button>
+                <div class="col-md-4 text-center mb-4 hover-effect">
+                    <i class="fa-solid fa-shield fa-3x mb-2"></i>
+                    <h3>CCTV</h3>
+                    <p>จำหน่าย ติดตั้ง ปลอดภัย มั่นใจ ครอบคลุม</p>
                 </div>
             </div>
         </div>
-    </div>
-    <!--End Modal -->
-    <!-- about -->
-    <section id="about" class="p-5">
+    </section>
+    <section id="about" class="p-5 fade-in-element">
         <div class="drak-overlay">
             <div class="row">
                 <div class="col">
                     <div class="container pt-5">
-                        <h1>เกี่ยวกับ</h1>
-                        <p>lorem ipsum dolor sit amet consectetur</p>
+                        <h1>เกี่ยวกับเรา</h1>
+                        <p></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--End about -->
-    <!---image--->
-    <div class="row mb-4">
-        <div id="hover" class="col-md-4">
-            <img src="img12.jpg" class="img-fluid">
-            <div class="container">
+    <!-- End about -->
+    
+    <!-- Image section -->
+    <div class="row mb-4 fade-in-element">
+        <div class="col-md-4">
+            <img src="img1.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img1.jpg')">
+        </div>
+        <div class="col-md-4">
+            <img src="img2.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img2.jpg')">
+        </div>
+        <div class="col-md-4">
+            <img src="img4.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img4.jpg')">
+        </div>
+    </div>
+    
+    <div class="row mb-4 fade-in-element">
+        <div class="col-md-4">
+            <img src="img5.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img5.jpg')">
+        </div>
+        <div class="col-md-4">
+            <img src="img6.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img6.jpg')">
+        </div>
+        <div class="col-md-4">
+            <img src="img7.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img7.jpg')">
+        </div>
+    </div>
+    
+    <div class="row mb-4 fade-in-element">
+        <div class="col-md-4">
+            <img src="img9.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img9.jpg')">
+        </div>
+        <div class="col-md-4">
+            <img src="img10.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img10.jpg')">
+        </div>
+        <div class="col-md-4">
+            <img src="img11.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img11.jpg')">
+        </div>
+    </div>
+    
+    <!-- Modal สำหรับรูปภาพ -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">ดูรูปภาพ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Image">
+                </div>
             </div>
         </div>
-        <div id="hover" class="col-md-4">
-            <img src="img13.jpg" class="img-fluid">
-        </div>
-        <div id="hover" class="col-md-4">
-            <img src="img4.jpg" class="img-fluid">
-        </div>
     </div>
-    <div class="row mb-4">
-        <div id="hover" class="col-md-4">
-            <img src="img5.jpg" class="img-fluid">
-        </div>
-        <div id="hover" class="col-md-4">
-            <img src="img6.jpg" class="img-fluid">
-        </div>
-        <div id="hover" class="col-md-4">
-            <img src="img7.jpg" class="img-fluid">
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div id="hover" class="col-md-4">
-            <img src="img9.jpg" class="img-fluid">
-        </div>
-        <div id="hover" class="col-md-4">
-            <img src="img10.jpg" class="img-fluid">
-        </div>
-        <div id="hover" class="col-md-4">
-            <img src="img11.jpg" class="img-fluid">
-        </div>
-    </div>
-    </section>
-    <div class="album py-5 bg-light">
+    
+    <div class="album py-5 bg-light fade-in-element">
         <div class="container-fluid">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-0">
-            <!-- การ์ดที่ 1 -->
-            <div class="col">
-              <div class="card shadow-sm border-0">
-                <!-- ใส่ภาพ -->
-                <img src="img12.jpg" class="card-img-top" alt="Image description" width="100%" height="300">
-                <div class="card-body p-1">
-                  <p class="card-text">ติดต่อ!!</p>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-0">
+                <!-- การ์ดที่ 1 รูปภาพ -->
+                <div class="col">
+                    <div class="card shadow-sm border-0 hover-effect">
+                        <img src="img12.jpg" class="card-img-top" alt="Image description" width="100%" height="300" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img12.jpg')">
+                        <div class="card-body p-1">
+                            <p class="card-text">ติดต่อ!!</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <!-- การ์ดที่ 2 วิดีโอ -->
+                <div class="col">
+                    <div class="card shadow-sm border-0 hover-effect">
+                        <video class="card-img-top" width="100%" height="300" autoplay loop muted data-bs-toggle="modal" data-bs-target="#videoModal" onclick="setModalContent('video', '42422e4f-2bc2-4b76-a6f8-9545d7f4a27d.mp4')">
+                            <source src="42422e4f-2bc2-4b76-a6f8-9545d7f4a27d.mp4" type="video/mp4">
+                        </video>
+                        <div class="card-body p-1">
+                            <p class="card-text">โปรโมชั่นโดนๆ!!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- การ์ดที่ 3 รูปภาพ -->
+                <div class="col">
+                    <div class="card shadow-sm border-0 hover-effect">
+                        <img src="img13.jpg" class="card-img-top" alt="Image description" width="100%" height="300" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img13.jpg')">
+                        <div class="card-body p-1">
+                            <p class="card-text">ล้างแอร์เริ่มต้น 500 บาท!!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <div class="card shadow-sm border-0">
-                  <!-- ใส่ภาพ -->
-                  <video class="card-img-top" width="100%" height="300" autoplay loop muted>
-                    <source src="42422e4f-2bc2-4b76-a6f8-9545d7f4a27d.mp4" type="video/mp4">
-                  </video>
-                  <div class="card-body p-1">
-                    <p class="card-text">โปรโมชั่นโดนๆ!!</p>
-                  </div>
+        </div>
+    </div>
+    
+    <!-- Modal สำหรับรูปภาพ -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">ดูรูปภาพ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              </div>
-            <div class="col">
-              <div class="card shadow-sm border-0">
-                <!-- ใส่ภาพ -->
-                <img src="img13.jpg" class="card-img-top" alt="Image description" width="100%" height="300">
-                <div class="card-body p-1">
-                  <p class="card-text">ล้างแอร์เริ่มต้น 500 บาท!!</p>
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Image">
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
+    
+    <!-- Modal สำหรับวิดีโอ -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">ดูวิดีโอ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="modalVideo" class="w-100" controls>
+                        <source src="42422e4f-2bc2-4b76-a6f8-9545d7f4a27d.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="text-center p-4">
         <div class="container">
             <div class="col">
                 <p>Copyright &copy;S.T.INTEREST 2006 CO.,LTD</p>
+                <p>โทร 02-3842056-8 , 090-9463955</p>
             </div>
         </div>
     </footer>
-    <!-- Modal -->
-<div class="modal" tabindex="-1" id="contactModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">บริการ</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>ทางเรามีบริการ</p>
-          <p>ขายแอร์</p>
-          <p>ติดตั้ง ซ่อมบำรุง ล้าง แอร์บ้านและโรงงาน</p>
-          <P>ขาย-ติดตั้งCCTV</p>
-          <p>โดยช่างฝีมือคุณภาพ ปลอดภัย มั่นใจ ครอบคลุม</p>
-          <p>สนใจติดต่อที่เบอร์โทร 02-3842056-8 , 090-9463955</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
 
-</html>
-<script src="js/bootstrap.min.js"></script>
+    <div class="modal" tabindex="-1" id="contactModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">บริการ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>ทางเรามีบริการ</p>
+                    <p>ขายแอร์</p>
+                    <p>จำหน่าย ติดตั้ง ซ่อมบำรุง แอร์บ้านและโรงงาน</p>
+                    <P>ติดตั้งCCTV</p>
+                    <p>โดยช่างฝีมือคุณภาพ ปลอดภัย มั่นใจ ครอบคลุม</p>
+                    <p>สนใจติดต่อที่เบอร์โทร 02-3842056-8 , 090-9463955</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="topBtn" class="btn btn-primary">
+        <i class="fa fa-arrow-up"></i> Top
+    </button>
+    <script>
+        // Fade-in effect when scrolling (with repeated effect)
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".fade-in-element");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible");
+                    }
+                });
+            }, {
+                threshold: 0.5  // เปลี่ยนค่าตามความเหมาะสม
+            });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+        // Fade-in effect when scrolling
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll(".fade-in-element");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+});
+// แสดงป๊อปอัพโฆษณาหลังจากโหลดหน้าเว็บ
+window.onload = function() {
+    const adPopup = document.getElementById("ad-popup");
+    const closeAd = document.getElementById("close-ad");
+
+    // แสดงป๊อปอัพ
+    adPopup.style.display = "flex";
+
+    // เมื่อคลิกปิดโฆษณา
+    closeAd.onclick = function() {
+        adPopup.style.display = "none";
+    }
+
+    // ตั้งเวลาให้ปิดอัตโนมัติหลังจาก 3 วินาที (3000 มิลลิวินาที)
+    setTimeout(function() {
+        adPopup.style.display = "none";
+    }, 2000); // 2000 มิลลิวินาที = 2 วินาที
+}
+// สร้าง Intersection Observer เพื่อดูว่า footer ปรากฏบนหน้าจอหรือยัง
+const footer = document.querySelector('footer');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        // ถ้า footer ปรากฏในหน้าจอ
+        if (entry.isIntersecting) {
+            footer.classList.add('show');
+            observer.disconnect(); // หยุดการสังเกตเมื่อ footer ปรากฏแล้ว
+        }
+    });
+}, { threshold: 0.5 }); // เริ่มสังเกตเมื่อ 50% ของ footer ปรากฏ
+
+// เริ่มสังเกต footer
+observer.observe(footer);
+<!-- JS ส่วนเพิ่มเติม -->
+    function setModalContent(type, source) {
+        if (type === 'image') {
+            document.getElementById('modalImage').src = source;
+        } else if (type === 'video') {
+            document.getElementById('modalVideo').children[0].src = source;
+        }
+    }
+    function setModalContent(type, source) {
+        if (type === 'image') {
+            document.getElementById('modalImage').src = source;
+        }
+    }
+     // การตั้งค่าให้ปุ่มแสดงเมื่อผู้ใช้เลื่อนลงมาจากส่วนบนของหน้า
+     window.onscroll = function() {
+        let topBtn = document.getElementById("topBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    };
+
+    // ฟังก์ชันให้เลื่อนกลับไปที่ด้านบนของหน้า
+    document.getElementById("topBtn").onclick = function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+    </script>
 </body>
 
 </html>
