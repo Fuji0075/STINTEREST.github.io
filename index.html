@@ -19,33 +19,158 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Charm&family=Charmonman&display=swap" rel="stylesheet">
     <style>
-        /* เพิ่มใน style.css หรือใน <style> ภายใน <head> */
-        .fade-in-element {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+      /* Keyframes สำหรับการเคลื่อนไหว */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
 
-        .fade-in-element.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ใช้แอนิเมชันเมื่อเห็นองค์ประกอบ */
+.fade-in-left {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.fade-in-right {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* ปรับแอนิเมชัน fade-in-element */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for the image display area */
+#imageDisplay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#imageDisplay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#closeImage {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+/* ปรับขนาดภาพในแกลเลอรี */
+.img-gallery {
+    cursor: pointer;
+    width: 100%;
+    height: 250px;  /* ความสูงของรูป */
+    object-fit: cover; /* ปรับขนาดรูปให้ไม่ผิดสัดส่วน */
+    transition: transform 0.3s ease;
+}
+
+.img-gallery:hover {
+    transform: scale(1.05); /* ลดการขยายขนาดตอน hover */
+}
+
+/* Style for the navigation buttons */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.nav-buttons button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.nav-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #slider .carousel-item {
+        height: 50vh;
+    }
+
+    #slider .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    /* ปรับขนาดภาพแกลเลอรีให้เล็กลงในหน้าจอขนาดกลาง */
+    .img-gallery {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .img-gallery {
+        height: 150px; /* ปรับขนาดให้เล็กลงในหน้าจอขนาดเล็กสุด */
+    }
+
+    #slider .carousel-item {
+        height: 40vh;
+    }
+
+    #slider .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+}
+
     </style>
 </head>
 
 <body>
-    <div id="ad-popup" class="ad-popup">
-        <div class="ad-popup-content">
-            <span id="close-ad" class="close-ad">&times;</span>
-            <img src="img13.jpg" alt="โปรโมชั่นโดนๆ" width="100%">
-        </div>
-    </div>
-
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
             <a href="index.html" class="navbar-brand">
-                <img src="Picture1.1.png" alt="S.T.INTEREST 2006 CO.,LTD Logo" class="logo">
-                S.T.INTEREST 2006 CO.,LTD
+                <img src="image/Picture1.1.png" alt="S.T INTEREST 2006 CO.,LTD Logo" class="logo">
             </a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
                 <span class="navbar-toggler-icon"></span>
@@ -56,7 +181,7 @@
                         <a href="index.html" class="nav-link">หน้าแรก</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">บริการ</a>
+                        <a href="#about" class="nav-link">บริการ</a>
                     </li>
                 </ul>
             </div>
@@ -95,7 +220,6 @@
                         </div>
                     </div>
                 </div>
-                <!--ปุ่มชี้ไปข้างหน้าและหลัง-->
                 <button class="carousel-control-prev" data-bs-target="#mySlider" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
@@ -105,7 +229,8 @@
             </div>
         </div>
     </section>
-    <section id="service" class="py-5 fade-in-element">
+
+    <section id="service" class="py-5 fade-in-element fade-in-left">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center mb-4 hover-effect">
@@ -116,10 +241,7 @@
                 <div class="col-md-4 text-center mb-4 hover-effect">
                     <i class="fa-solid fa-crown fa-3x mb-2"></i>
                     <h3>S.T.INTEREST 2006 CO.,LTD</h3>
-                    <p>93 หมู่ 5 ซ.ด่านสำโรง 10 สุขุมวิท 113 ต.สำโรงเหนือ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10270
-                        93 Moo 5 Soi Dhansamrong 10 Sukhumvit 113 Rd., Samrongnuar, Muang Samutprakarn, Samutprakarn
-                        โทร 02-3842056-8 , 090-9463955 เลขประจำตัวผู้เสียภาษี 0115549000554
-                    </p>
+                    <p>93 หมู่ 5 ซ.ด่านสำโรง 10 สุขุมวิท 113 ต.สำโรงเหนือ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10270</p>
                 </div>
                 <div class="col-md-4 text-center mb-4 hover-effect">
                     <i class="fa-solid fa-shield fa-3x mb-2"></i>
@@ -129,137 +251,53 @@
             </div>
         </div>
     </section>
-    <section id="about" class="p-5 fade-in-element">
-        <div class="drak-overlay">
-            <div class="row">
-                <div class="col">
-                    <div class="container pt-5">
-                        <h1>เกี่ยวกับเรา</h1>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
+
+    <section id="about" class="p-5 fade-in-element fade-in-right">
+        <div class="container pt-5">
+            <h1>บริการ</h1>
+            <p>จำหน่าย ติดตั้ง ซ่อมบำรุง แอร์บ้านและโรงงาน</p>
+            <p>จำหน่าย ติดตั้ง CCTV บริการหลังการขายแบบฉ่ำๆ!!</p>
+            <p></p>
         </div>
     </section>
-    <!-- End about -->
-    
-    <!-- Image section -->
+
+    <div id="imageDisplay">
+        <button id="closeImage">&times;</button>
+        <div class="nav-buttons">
+            <button onclick="changeImage(-1)">&#10094;</button>
+            <button onclick="changeImage(1)">&#10095;</button>
+        </div>
+        <img id="fullImage" src="" alt="Full Image">
+    </div>
+
+    <!-- Image Gallery -->
     <div class="row mb-4 fade-in-element">
         <div class="col-md-4">
-            <img src="img1.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img1.jpg')">
+            <img src="image/img1.jpg" class="img-fluid img-gallery" onclick="displayImage(0)">
         </div>
         <div class="col-md-4">
-            <img src="img2.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img2.jpg')">
+            <img src="image/img2.jpg" class="img-fluid img-gallery" onclick="displayImage(1)">
         </div>
         <div class="col-md-4">
-            <img src="img4.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img4.jpg')">
+            <img src="image/img4.jpg" class="img-fluid img-gallery" onclick="displayImage(2)">
         </div>
     </div>
-    
+
     <div class="row mb-4 fade-in-element">
         <div class="col-md-4">
-            <img src="img5.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img5.jpg')">
+            <img src="image/img5.jpg" class="img-fluid img-gallery" onclick="displayImage(3)">
         </div>
         <div class="col-md-4">
-            <img src="img6.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img6.jpg')">
+            <img src="image/img7.jpg" class="img-fluid img-gallery" onclick="displayImage(4)">
         </div>
         <div class="col-md-4">
-            <img src="img7.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img7.jpg')">
-        </div>
-    </div>
-    
-    <div class="row mb-4 fade-in-element">
-        <div class="col-md-4">
-            <img src="img9.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img9.jpg')">
+            <img src="image/img8.jpg" class="img-fluid img-gallery" onclick="displayImage(5)">
         </div>
         <div class="col-md-4">
-            <img src="img10.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img10.jpg')">
+            <img src="image/img13.jpg" class="img-fluid img-gallery" onclick="displayImage(6)">
         </div>
         <div class="col-md-4">
-            <img src="img11.jpg" class="img-fluid equal-size" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img11.jpg')">
-        </div>
-    </div>
-    
-    <!-- Modal สำหรับรูปภาพ -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel">ดูรูปภาพ</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="modalImage" src="" class="img-fluid" alt="Image">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="album py-5 bg-light fade-in-element">
-        <div class="container-fluid">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-0">
-                <!-- การ์ดที่ 1 รูปภาพ -->
-                <div class="col">
-                    <div class="card shadow-sm border-0 hover-effect">
-                        <img src="img12.jpg" class="card-img-top" alt="Image description" width="100%" height="300" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img12.jpg')">
-                        <div class="card-body p-1">
-                            <p class="card-text">ติดต่อ!!</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- การ์ดที่ 2 วิดีโอ -->
-                <div class="col">
-                    <div class="card shadow-sm border-0 hover-effect">
-                        <video class="card-img-top" width="100%" height="300" autoplay loop muted data-bs-toggle="modal" data-bs-target="#videoModal" onclick="setModalContent('video', '42422e4f-2bc2-4b76-a6f8-9545d7f4a27d.mp4')">
-                            <source src="42422e4f-2bc2-4b76-a6f8-9545d7f4a27d.mp4" type="video/mp4">
-                        </video>
-                        <div class="card-body p-1">
-                            <p class="card-text">โปรโมชั่นโดนๆ!!</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- การ์ดที่ 3 รูปภาพ -->
-                <div class="col">
-                    <div class="card shadow-sm border-0 hover-effect">
-                        <img src="img13.jpg" class="card-img-top" alt="Image description" width="100%" height="300" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="setModalContent('image', 'img13.jpg')">
-                        <div class="card-body p-1">
-                            <p class="card-text">ล้างแอร์เริ่มต้น 500 บาท!!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal สำหรับรูปภาพ -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel">ดูรูปภาพ</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="modalImage" src="" class="img-fluid" alt="Image">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal สำหรับวิดีโอ -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="videoModalLabel">ดูวิดีโอ</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <video id="modalVideo" class="w-100" controls>
-                        <source src="42422e4f-2bc2-4b76-a6f8-9545d7f4a27d.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
+            <img src="image/img14.jpg" class="img-fluid img-gallery" onclick="displayImage(7)">
         </div>
     </div>
     <footer class="text-center p-4">
@@ -270,132 +308,59 @@
             </div>
         </div>
     </footer>
-
-    <div class="modal" tabindex="-1" id="contactModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">บริการ</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>ทางเรามีบริการ</p>
-                    <p>ขายแอร์</p>
-                    <p>จำหน่าย ติดตั้ง ซ่อมบำรุง แอร์บ้านและโรงงาน</p>
-                    <P>ติดตั้งCCTV</p>
-                    <p>โดยช่างฝีมือคุณภาพ ปลอดภัย มั่นใจ ครอบคลุม</p>
-                    <p>สนใจติดต่อที่เบอร์โทร 02-3842056-8 , 090-9463955</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button id="topBtn" class="btn btn-primary">
-        <i class="fa fa-arrow-up"></i> Top
-    </button>
     <script>
-        // Fade-in effect when scrolling (with repeated effect)
-        document.addEventListener("DOMContentLoaded", function () {
-            const fadeElements = document.querySelectorAll(".fade-in-element");
+        let currentIndex = 0;
+        const images = [
+            "image/img1.jpg",
+            "image/img2.jpg",
+            "image/img4.jpg",
+            "image/img5.jpg",
+            "image/img7.jpg",
+            "image/img8.jpg",
+            "image/img13.jpg",
+            "image/img14.jpg"
+        ];
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    } else {
-                        entry.target.classList.remove("visible");
-                    }
-                });
-            }, {
-                threshold: 0.5  // เปลี่ยนค่าตามความเหมาะสม
-            });
+        function displayImage(index) {
+            currentIndex = index;
+            const imgElement = document.getElementById("fullImage");
+            imgElement.src = images[currentIndex];
+            document.getElementById("imageDisplay").style.display = "flex";
+        }
 
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
+        document.getElementById("closeImage").addEventListener("click", function () {
+            document.getElementById("imageDisplay").style.display = "none";
         });
-        // Fade-in effect when scrolling
-document.addEventListener("DOMContentLoaded", function () {
-    const fadeElements = document.querySelectorAll(".fade-in-element");
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            } else {
-                entry.target.classList.remove("visible");
-            }
+        function changeImage(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            document.getElementById("fullImage").src = images[currentIndex];
+        }
+
+        // IntersectionObserver to detect when elements are visible
+        const fadeInElements = document.querySelectorAll('.fade-in-element');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
         });
-    }, {
-        threshold: 0.5
-    });
-
-    fadeElements.forEach(element => {
-        observer.observe(element);
-    });
+        // เพิ่มคลาส "show" ให้ footer เมื่อเลื่อนถึงตำแหน่งที่กำหนด
+window.addEventListener("scroll", function() {
+    var footer = document.querySelector("footer");
+    var position = window.scrollY + window.innerHeight;
+    if (position >= document.documentElement.scrollHeight) {
+        footer.classList.add("show");
+    } else {
+        footer.classList.remove("show");
+    }
 });
-// แสดงป๊อปอัพโฆษณาหลังจากโหลดหน้าเว็บ
-window.onload = function() {
-    const adPopup = document.getElementById("ad-popup");
-    const closeAd = document.getElementById("close-ad");
 
-    // แสดงป๊อปอัพ
-    adPopup.style.display = "flex";
-
-    // เมื่อคลิกปิดโฆษณา
-    closeAd.onclick = function() {
-        adPopup.style.display = "none";
-    }
-
-    // ตั้งเวลาให้ปิดอัตโนมัติหลังจาก 3 วินาที (3000 มิลลิวินาที)
-    setTimeout(function() {
-        adPopup.style.display = "none";
-    }, 2000); // 2000 มิลลิวินาที = 2 วินาที
-}
-// สร้าง Intersection Observer เพื่อดูว่า footer ปรากฏบนหน้าจอหรือยัง
-const footer = document.querySelector('footer');
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        // ถ้า footer ปรากฏในหน้าจอ
-        if (entry.isIntersecting) {
-            footer.classList.add('show');
-            observer.disconnect(); // หยุดการสังเกตเมื่อ footer ปรากฏแล้ว
-        }
-    });
-}, { threshold: 0.5 }); // เริ่มสังเกตเมื่อ 50% ของ footer ปรากฏ
-
-// เริ่มสังเกต footer
-observer.observe(footer);
-<!-- JS ส่วนเพิ่มเติม -->
-    function setModalContent(type, source) {
-        if (type === 'image') {
-            document.getElementById('modalImage').src = source;
-        } else if (type === 'video') {
-            document.getElementById('modalVideo').children[0].src = source;
-        }
-    }
-    function setModalContent(type, source) {
-        if (type === 'image') {
-            document.getElementById('modalImage').src = source;
-        }
-    }
-     // การตั้งค่าให้ปุ่มแสดงเมื่อผู้ใช้เลื่อนลงมาจากส่วนบนของหน้า
-     window.onscroll = function() {
-        let topBtn = document.getElementById("topBtn");
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            topBtn.style.display = "block";
-        } else {
-            topBtn.style.display = "none";
-        }
-    };
-
-    // ฟังก์ชันให้เลื่อนกลับไปที่ด้านบนของหน้า
-    document.getElementById("topBtn").onclick = function() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
     </script>
 </body>
 
