@@ -1,22 +1,28 @@
 .carousel-item {
-    height: 590px;
-    width: 1400px;
+    height: 500px; /* ความสูงเริ่มต้นสำหรับหน้าจอใหญ่ */
+    position: relative;
 }
 
-.carousel-image-1 {
-    background-image: url('Picture5.jpg');
-    background-size: cover;
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้ภาพพอดีกับกรอบ */
 }
 
-.carousel-image-2 {
-    background-image: url('img2.jpg');
-    background-size: cover;
+/* ปรับสำหรับหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px; /* ลดความสูงในมือถือ */
+    }
 }
 
-.carousel-image-3 {
-    background-image: url('img4.jpg');
-    background-size: cover;
+/* ปรับสำหรับจอขนาดเล็กมาก */
+@media (max-width: 576px) {
+    .carousel-item {
+        height: 250px; /* ลดอีกในจอที่เล็กที่สุด */
+    }
 }
+
 
 .dark-overlay {
     position: absolute;
@@ -216,4 +222,146 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
+}
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ใช้แอนิเมชันเมื่อเห็นองค์ประกอบ */
+.fade-in-left {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.fade-in-right {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* ปรับแอนิเมชัน fade-in-element */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for the image display area */
+#imageDisplay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#imageDisplay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#closeImage {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+/* ปรับขนาดภาพในแกลเลอรี */
+.img-gallery {
+    cursor: pointer;
+    width: 100%;
+    height: 250px;  /* ความสูงของรูป */
+    object-fit: cover; /* ปรับขนาดรูปให้ไม่ผิดสัดส่วน */
+    transition: transform 0.3s ease;
+}
+
+.img-gallery:hover {
+    transform: scale(1.05); /* ลดการขยายขนาดตอน hover */
+}
+
+/* Style for the navigation buttons */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.nav-buttons button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.nav-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #slider .carousel-item {
+        height: 50vh;
+    }
+
+    #slider .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    /* ปรับขนาดภาพแกลเลอรีให้เล็กลงในหน้าจอขนาดกลาง */
+    .img-gallery {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .img-gallery {
+        height: 150px; /* ปรับขนาดให้เล็กลงในหน้าจอขนาดเล็กสุด */
+    }
+
+    #slider .carousel-item {
+        height: 40vh;
+    }
+
+    #slider .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
 }
