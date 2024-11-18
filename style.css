@@ -1,24 +1,24 @@
-*
-.carousel-item{
+.carousel-item {
     height: 590px;
     width: 1400px;
 }
 
-.carousel-image-1{
+.carousel-image-1 {
     background-image: url('Picture5.jpg');
     background-size: cover;
 }
 
-.carousel-image-2{
+.carousel-image-2 {
     background-image: url('img2.jpg');
     background-size: cover;
 }
 
-.carousel-image-3{
+.carousel-image-3 {
     background-image: url('img4.jpg');
     background-size: cover;
 }
-.dark-overlay{
+
+.dark-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,64 +26,7 @@
     width: 100%;
     height: 100%;
 }
-.modal-body {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.from-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-.from-control:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-textarea.from-control {
-    resize: vertical;
-}
-
-.modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-}
-
-.modal-footer .btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-left: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    color: #fff;
-}
-
-.btn-secondary:hover {
-    background-color: #5a6268;
-}
 .row {
     margin-bottom: 30px;
 }
@@ -134,6 +77,7 @@ textarea.from-control {
 #hover:hover::after {
     opacity: 1;
 }
+
 #about {
     min-height: 200px;
     position: relative;
@@ -144,49 +88,23 @@ textarea.from-control {
     color: black;
     background-attachment: fixed;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 #hover img {
     transition: transform 0.3s ease-in-out;
 }
- /* Footer */
- footer {
+
+/* Footer */
+footer {
     background-color: #333;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 20px 0;
 }
-/* สไตล์ปุ่ม Back to Top */
-#backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
 
-/* เอฟเฟกต์เลื่อนนุ่มนวล */
-html {
-    scroll-behavior: smooth;
-}
 /* กำหนดเอฟเฟกต์ค่อยๆ ปรากฏ */
-.fade-in-element {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-element.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* Fade-in effect */
 .fade-in-element {
     opacity: 0;
     transform: translateY(20px);
@@ -207,17 +125,6 @@ html {
     transform: scale(1.05); /* Slight zoom effect */
     background-color: rgba(0, 0, 0, 0.1); /* Add subtle background color on hover */
 }
-/* Fade-in effect */
-.fade-in-element {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-element.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* Hover effect for cards */
 .hover-effect {
@@ -228,40 +135,8 @@ html {
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow on hover */
 }
-/* ป๊อปอัพโฆษณา */
-.ad-popup {
-    display: none; /* เริ่มต้นปิด */
-    position: fixed;
-    top: 0; /* ตั้งตำแหน่งให้เต็มจอจากด้านบน */
-    left: 0; /* ตั้งตำแหน่งให้เต็มจอจากด้านซ้าย */
-    width: 100vw; /* ใช้ความกว้างเต็มหน้าจอ */
-    height: 100vh; /* ใช้ความสูงเต็มหน้าจอ */
-    background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังโปร่งแสง */
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    padding: 10px;
-    box-sizing: border-box; /* รวม padding ในการคำนวณขนาด */
-}
 
-/* เนื้อหาของป๊อปอัพ */
-.ad-popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 90%; /* ใช้ความกว้าง 90% ของหน้าจอ */
-    max-width: 500px; /* กำหนดความกว้างสูงสุด */
-    height: auto;
-    margin: 0 auto; /* จัดให้อยู่กลางหน้าจอ */
-    box-sizing: border-box;
-}
 
-/* ปรับขนาดของภาพในป๊อปอัพ */
-.ad-popup img {
-    width: 100%; /* ให้ภาพกว้างเต็มพื้นที่ของป๊อปอัพ */
-    border-radius: 5px; /* ขอบโค้งมน */
-}
 /* เริ่มต้น footer ให้โปร่งใสและเลื่อนออกจากตำแหน่ง */
 footer {
     opacity: 0;
@@ -274,13 +149,15 @@ footer.show {
     opacity: 1;
     transform: translateY(0);
 }
+
 .equal-size {
     width: 100%;
     height: 200px; /* ปรับความสูงตามต้องการ */
     object-fit: cover; /* ใช้ cover เพื่อให้ภาพพอดีกับกรอบ */
 }
-  /* เพิ่ม margin และ padding ให้กับคอลัมน์และรูปภาพ */
-  .row.mb-4 {
+
+/* เพิ่ม margin และ padding ให้กับคอลัมน์และรูปภาพ */
+.row.mb-4 {
     margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง */
 }
 
@@ -299,76 +176,44 @@ footer.show {
     transform: scale(1.05); /* ขยายภาพเล็กน้อยเมื่อ hover */
     cursor: pointer;
 }
-
-/* ปรับขนาดของ modal */
-.modal-body img {
-    width: 100%; /* ให้ภาพใน modal ขยายเต็มพื้นที่ */
-    height: auto;
-}
-  /* เพิ่ม margin และ padding ให้กับคอลัมน์และรูปภาพ */
-  .row.mb-4 {
-    margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง */
-}
-
-.col-md-4 {
-    padding: 10px; /* เพิ่ม padding ให้ไม่ติดขอบ */
-}
-
-.equal-size {
-    width: 100%;
-    height: 200px; /* กำหนดความสูงของภาพให้เท่ากัน */
-    object-fit: cover; /* ให้รูปภาพครอบพื้นที่ทั้งหมด */
-    border: 2px solid #8d8a8a; /* เพิ่มกรอบให้กับรูป */
-    border-radius: 8px; /* ให้กรอบมีมุมมน */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับรูป */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่ม transition สำหรับ hover */
-}
-
-.equal-size:hover {
-    transform: scale(1.05); /* ขยายภาพเล็กน้อยเมื่อ hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเข้มขึ้นเมื่อ hover */
-    cursor: pointer;
-}
-
-/* ปรับขนาดของ modal */
-.modal-body img {
-    width: 100%; /* ให้ภาพใน modal ขยายเต็มพื้นที่ */
-    height: auto;
-}
-#topBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px 15px;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: none; /* เริ่มต้นซ่อนปุ่ม */
-    transition: background-color 0.3s ease;
-}
-
-#topBtn:hover {
-    background-color: #0056b3; /* เปลี่ยนสีเมื่อ hover */
-}
-
-#topBtn i {
-    margin-right: 5px;
-}
+/* ปรับขนาดโลโก้ Navbar */
 .navbar-brand {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;  /* ปรับขนาดฟอนต์ */
     font-weight: bold;
     text-decoration: none;
-    color: #333; /* เปลี่ยนสีข้อความที่ต้องการ */
+    color: #333; /* สีของข้อความ */
 }
 
 .logo {
-    width: 40px; /* ขนาดของโลโก้ */
+    width: 30px; /* ปรับขนาดของโลโก้ให้เล็กลง */
     height: auto;
     margin-right: 10px; /* ช่องว่างระหว่างโลโก้และข้อความ */
+}
+
+/* แก้ไข footer ให้ปรากฏขึ้น */
+footer {
+    background-color: #333;
+    color: rgb(0, 0, 0);
+    padding: 20px 0;
+    opacity: 0; /* ทำให้ footer ซ่อน */
+    transform: translateY(30px); /* เลื่อน footer ออก */
+    transition: opacity 1s ease, transform 1s ease; /* การเปลี่ยนแปลงเมื่อ footer ปรากฏ */
+}
+
+/* เมื่อ footer ควรปรากฏ */
+footer.show {
+    opacity: 1; /* ทำให้ footer ปรากฏ */
+    transform: translateY(0); /* ย้าย footer กลับมา */
+}
+
+/* กำหนดขนาดและการแสดงผลของ footer */
+footer {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
 }
