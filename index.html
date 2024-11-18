@@ -18,152 +18,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Charm&family=Charmonman&display=swap" rel="stylesheet">
-    <style>
-      /* Keyframes สำหรับการเคลื่อนไหว */
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* ใช้แอนิเมชันเมื่อเห็นองค์ประกอบ */
-.fade-in-left {
-    animation: slideInLeft 1s ease-out forwards;
-}
-
-.fade-in-right {
-    animation: slideInRight 1s ease-out forwards;
-}
-
-/* ปรับแอนิเมชัน fade-in-element */
-.fade-in-element {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-element.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Style for the image display area */
-#imageDisplay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-#imageDisplay img {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-#closeImage {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.6);
-    border: none;
-    padding: 5px 10px;
-    border-radius: 50%;
-}
-
-/* ปรับขนาดภาพในแกลเลอรี */
-.img-gallery {
-    cursor: pointer;
-    width: 100%;
-    height: 250px;  /* ความสูงของรูป */
-    object-fit: cover; /* ปรับขนาดรูปให้ไม่ผิดสัดส่วน */
-    transition: transform 0.3s ease;
-}
-
-.img-gallery:hover {
-    transform: scale(1.05); /* ลดการขยายขนาดตอน hover */
-}
-
-/* Style for the navigation buttons */
-.nav-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.nav-buttons button {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.nav-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    #slider .carousel-item {
-        height: 50vh;
-    }
-
-    #slider .carousel-caption h1 {
-        font-size: 2rem;
-    }
-
-    /* ปรับขนาดภาพแกลเลอรีให้เล็กลงในหน้าจอขนาดกลาง */
-    .img-gallery {
-        height: 200px;
-    }
-}
-
-@media (max-width: 576px) {
-    .img-gallery {
-        height: 150px; /* ปรับขนาดให้เล็กลงในหน้าจอขนาดเล็กสุด */
-    }
-
-    #slider .carousel-item {
-        height: 40vh;
-    }
-
-    #slider .carousel-caption h1 {
-        font-size: 1.5rem;
-    }
-}
-
-    </style>
 </head>
 
 <body>
@@ -188,47 +42,50 @@
         </div>
     </nav>
 
-    <section id="slider">
-        <div class="carousel slide" data-bs-ride="carousel" id="mySlider">
-            <ol class="carousel-indicators">
-                <button data-bs-target="#mySlider" data-bs-slide-to="0" class="active"></button>
-                <button data-bs-target="#mySlider" data-bs-slide-to="1"></button>
-                <button data-bs-target="#mySlider" data-bs-slide-to="2"></button>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item carousel-image-1 active">
-                    <div class="container">
-                        <div class="carousel-caption d-none d-sm-block">
-                            <h1 class="display-3">AIR CONDISIONING</h1>
-                            <p>AIR CONDISIONING</p>
-                        </div>
-                    </div>
+    <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators (จุดสำหรับเลือกหน้า) -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    
+        <!-- Slides (ภาพแต่ละหน้า) -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Picture5.jpg" class="d-block w-100 img-fluid" alt="Slide 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Slide 1 Title</h5>
+                    <p>Some description for slide 1.</p>
                 </div>
-                <div class="carousel-item carousel-image-2">
-                    <div class="container">
-                        <div class="carousel-caption d-none d-sm-block">
-                            <h1 class="display-3">CCTV</h1>
-                            <p>CCTV</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img2.jpg" class="d-block w-100 img-fluid" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Slide 2 Title</h5>
+                    <p>Some description for slide 2.</p>
                 </div>
-                <div class="carousel-item carousel-image-3">
-                    <div class="container">
-                        <div class="carousel-caption d-none d-sm-block">
-                            <h1 class="display-3">ครอบคลุม มั่นใจ ปลอดภัย</h1>
-                            <p></p>
-                        </div>
-                    </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img4.jpg" class="d-block w-100 img-fluid" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Slide 3 Title</h5>
+                    <p>Some description for slide 3.</p>
                 </div>
-                <button class="carousel-control-prev" data-bs-target="#mySlider" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" data-bs-target="#mySlider" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
             </div>
         </div>
-    </section>
+    
+        <!-- Navigation Controls (ปุ่มไปหน้าก่อนหน้า/ถัดไป) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
 
     <section id="service" class="py-5 fade-in-element fade-in-left">
         <div class="container">
