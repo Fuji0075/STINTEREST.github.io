@@ -84,7 +84,27 @@
     opacity: 1;
 }
 
-#about {
+#service {
+    min-height: 200px;
+    position: relative;
+    background-image: url("https://cdn.pixabay.com/photo/2024/10/28/06/12/river-9155147_1280.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: black;
+    background-attachment: fixed;
+}
+#aboutus{
+    min-height: 200px;
+    position: relative;
+    background-image: url("https://cdn.pixabay.com/photo/2024/10/28/06/12/river-9155147_1280.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: black;
+    background-attachment: fixed;
+}
+#reviwe{
     min-height: 200px;
     position: relative;
     background-image: url("https://cdn.pixabay.com/photo/2024/10/28/06/12/river-9155147_1280.jpg");
@@ -200,29 +220,15 @@ footer.show {
 
 /* แก้ไข footer ให้ปรากฏขึ้น */
 footer {
-    background-color: #333;
-    color: rgb(0, 0, 0);
+    background-color: #a09898;
+    color: rgb(134, 131, 131);
     padding: 20px 0;
     opacity: 0; /* ทำให้ footer ซ่อน */
     transform: translateY(30px); /* เลื่อน footer ออก */
     transition: opacity 1s ease, transform 1s ease; /* การเปลี่ยนแปลงเมื่อ footer ปรากฏ */
 }
 
-/* เมื่อ footer ควรปรากฏ */
-footer.show {
-    opacity: 1; /* ทำให้ footer ปรากฏ */
-    transform: translateY(0); /* ย้าย footer กลับมา */
-}
 
-/* กำหนดขนาดและการแสดงผลของ footer */
-footer {
-    opacity: 1;
-    transform: translateY(0);
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-}
 @keyframes slideInLeft {
     from {
         transform: translateX(-100%);
@@ -363,5 +369,259 @@ footer {
 
     #slider .carousel-caption h1 {
         font-size: 1.5rem;
+    }
+}
+/* ส่วนของโครงสร้างที่ปรับปรุง */
+.image-text-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* ระยะห่างระหว่างรูปภาพและข้อความ */
+    margin-bottom: 2.5rem; /* ระยะห่างด้านล่าง */
+    padding: 0 1rem; /* เพิ่ม padding ซ้าย-ขวา */
+}
+
+.image-left {
+    max-width: 350px; /* ลดความกว้างในเดสก์ท็อป */
+    height: auto; /* คงอัตราส่วนภาพ */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* เพิ่มเงาให้ดูนุ่ม */
+}
+
+.text-right {
+    max-width: 55%; /* ลดขนาดข้อความ */
+    padding-left: 1rem; /* เพิ่มระยะห่างด้านซ้าย */
+}
+
+.text-right h2 {
+    margin-top: 0;
+    font-size: 1.8rem; /* ขนาดหัวข้อในเดสก์ท็อป */
+    margin-bottom: 0.8rem; /* ระยะห่างระหว่างหัวข้อ */
+}
+
+.text-right p {
+    margin-bottom: 0.8rem;
+    line-height: 1.7; /* เพิ่มความอ่านง่าย */
+}
+
+/* Media Queries สำหรับมือถือ */
+@media (max-width: 768px) {
+    .image-text-container {
+        flex-direction: column; /* จัดรูปแบบแนวตั้ง */
+        text-align: center; /* จัดข้อความกึ่งกลาง */
+        gap: 10px; /* ลดระยะห่าง */
+    }
+
+    .image-left {
+        max-width: 100%; /* ปรับรูปภาพให้เต็มจอ */
+        margin-bottom: 15px; /* เพิ่มระยะห่างด้านล่าง */
+    }
+
+    .text-right {
+        max-width: 100%; /* ขยายข้อความให้พอดีกับหน้าจอ */
+        padding: 0; /* ลบ padding ด้านซ้าย */
+    }
+
+    .text-right h2 {
+        font-size: 1.5rem; /* ลดขนาดหัวข้อในมือถือ */
+    }
+
+    .text-right p {
+        line-height: 1.6; /* เพิ่มระยะบรรทัดในข้อความ */
+    }
+}
+
+/* Footer Styling */
+footer {
+    font-size: 0.9rem;
+    text-align: center; /* จัดกึ่งกลางข้อความใน footer */
+}
+
+footer.show {
+    background-color: #212529;
+    transition: background-color 0.3s ease;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.8rem; /* ลดขนาดข้อความ footer */
+    }
+}
+.image-container {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .image-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .image-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .navbar.sticky-top {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+   /* Animation Styles */
+   .animation {
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .fade-in-left {
+    transform: translateX(-100px);
+  }
+
+  .fade-in-right {
+    transform: translateX(100px);
+  }
+
+  .animation.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  #close-lightbox {
+    background-color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+}
+
+/* สไตล์ให้แสดงภาพใน lightbox */
+#lightbox-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    display: none;
+}
+
+#lightbox-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    margin: 5% auto;
+    display: block;
+}
+.card-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px; /* กำหนดระยะห่างระหว่างการ์ด */
+}
+
+.card-img-container {
+    position: relative;
+    height: 250px; /* กำหนดความสูงของรูปภาพให้เท่ากัน */
+    overflow: hidden;
+}
+
+.card-img-top {
+    object-fit: cover; /* ใช้ object-fit ให้รูปภาพเต็มพื้นที่และไม่บิดเบือน */
+    height: 100%; /* ทำให้รูปยืดเต็มพื้นที่ของ container */
+    width: 100%;
+}
+
+.stars i {
+    color: gold;
+    margin-right: 5px;
+}
+/* ขนาดปกติสำหรับ Desktop หรือจอใหญ่ */
+.card-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px; /* กำหนดระยะห่างระหว่างการ์ด */
+    justify-content: space-between;
+}
+
+.card-img-container {
+    position: relative;
+    height: 250px; /* กำหนดความสูงของรูปภาพให้เท่ากัน */
+    overflow: hidden;
+}
+
+.card-img-top {
+    object-fit: cover; /* ใช้ object-fit ให้รูปภาพเต็มพื้นที่และไม่บิดเบือน */
+    height: 100%; /* ทำให้รูปยืดเต็มพื้นที่ของ container */
+    width: 100%;
+}
+
+.stars i {
+    color: gold;
+    margin-right: 5px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* เพิ่มกรอบให้การ์ด */
+    border-radius: 10px; /* ทำมุมให้การ์ดนุ่มขึ้น */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้การ์ด */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่ม transition ให้กับการย้ายตำแหน่งและเงา */
+}
+
+/* กำหนด hover effect สำหรับการ์ด */
+.card:hover {
+    transform: translateY(-10px); /* เลื่อนการ์ดขึ้นเล็กน้อยเมื่อ hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+}
+
+/* Responsive - สำหรับมือถือ (Screen width < 768px) */
+@media (max-width: 768px) {
+    .card-group {
+        flex-direction: column; /* จัดการ์ดเป็นแถวเดียว */
+        gap: 20px; /* เพิ่มระยะห่างระหว่างการ์ด */
+    }
+
+    .card-img-container {
+        height: 200px; /* ลดความสูงของรูปภาพสำหรับมือถือ */
+    }
+
+    .card-body {
+        padding: 15px; /* ลด padding ภายในการ์ด */
+    }
+
+    .card-footer {
+        padding: 8px; /* ลด padding ของ footer */
+    }
+}
+
+/* Responsive - สำหรับหน้าจอเล็ก (Screen width < 576px) */
+@media (max-width: 576px) {
+    .card-img-container {
+        height: 180px; /* ลดความสูงของรูปภาพลงอีก */
+    }
+
+    .card-body {
+        padding: 10px; /* ลด padding ของการ์ด */
+    }
+
+    .card-footer {
+        padding: 6px; /* ลด padding ของ footer */
     }
 }
