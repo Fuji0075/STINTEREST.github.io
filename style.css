@@ -1,25 +1,29 @@
 .carousel-item {
-    height: 500px; /* ความสูงเริ่มต้นสำหรับหน้าจอใหญ่ */
+    height: 500px;
+    /* ความสูงเริ่มต้นสำหรับหน้าจอใหญ่ */
     position: relative;
 }
 
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ทำให้ภาพพอดีกับกรอบ */
+    object-fit: cover;
+    /* ทำให้ภาพพอดีกับกรอบ */
 }
 
 /* ปรับสำหรับหน้าจอมือถือ */
 @media (max-width: 768px) {
     .carousel-item {
-        height: 300px; /* ลดความสูงในมือถือ */
+        height: 300px;
+        /* ลดความสูงในมือถือ */
     }
 }
 
 /* ปรับสำหรับจอขนาดเล็กมาก */
 @media (max-width: 576px) {
     .carousel-item {
-        height: 250px; /* ลดอีกในจอที่เล็กที่สุด */
+        height: 250px;
+        /* ลดอีกในจอที่เล็กที่สุด */
     }
 }
 
@@ -39,17 +43,20 @@
 
 .row {
     margin: 0 auto;
-    max-width: 90%; /* ปรับให้แถวทั้งหมดเข้ามาด้านใน */
+    max-width: 90%;
+    /* ปรับให้แถวทั้งหมดเข้ามาด้านใน */
 }
 
 /* ตั้งค่าขนาดคงที่ให้ภาพ และขยับภาพเข้ามา */
 #hover {
-    padding: 10px; /* เพิ่ม padding รอบ ๆ ภาพ */
+    padding: 10px;
+    /* เพิ่ม padding รอบ ๆ ภาพ */
 }
 
 #hover img {
     width: 100%;
-    height: 250px; /* หรือความสูงที่ต้องการ */
+    height: 250px;
+    /* หรือความสูงที่ต้องการ */
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -94,7 +101,8 @@
     color: black;
     background-attachment: fixed;
 }
-#aboutus{
+
+#aboutus {
     min-height: 200px;
     position: relative;
     background-image: url("https://cdn.pixabay.com/photo/2024/10/28/06/12/river-9155147_1280.jpg");
@@ -104,7 +112,8 @@
     color: black;
     background-attachment: fixed;
 }
-#reviwe{
+
+#ourworke {
     min-height: 200px;
     position: relative;
     background-image: url("https://cdn.pixabay.com/photo/2024/10/28/06/12/river-9155147_1280.jpg");
@@ -123,12 +132,6 @@ html {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: rgb(0, 0, 0);
-    padding: 20px 0;
-}
 
 /* กำหนดเอฟเฟกต์ค่อยๆ ปรากฏ */
 .fade-in-element {
@@ -148,8 +151,10 @@ footer {
 }
 
 .hover-effect:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    background-color: rgba(0, 0, 0, 0.1); /* Add subtle background color on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Add subtle background color on hover */
 }
 
 /* Hover effect for cards */
@@ -158,8 +163,10 @@ footer {
 }
 
 .hover-effect:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    /* Subtle shadow on hover */
 }
 
 
@@ -178,54 +185,57 @@ footer.show {
 
 .equal-size {
     width: 100%;
-    height: 200px; /* ปรับความสูงตามต้องการ */
-    object-fit: cover; /* ใช้ cover เพื่อให้ภาพพอดีกับกรอบ */
+    height: 200px;
+    /* ปรับความสูงตามต้องการ */
+    object-fit: cover;
+    /* ใช้ cover เพื่อให้ภาพพอดีกับกรอบ */
 }
 
 /* เพิ่ม margin และ padding ให้กับคอลัมน์และรูปภาพ */
 .row.mb-4 {
-    margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง */
+    margin-bottom: 20px;
+    /* เพิ่มช่องว่างด้านล่าง */
 }
 
 .col-md-4 {
-    padding: 10px; /* เพิ่ม padding ให้ไม่ติดขอบ */
+    padding: 10px;
+    /* เพิ่ม padding ให้ไม่ติดขอบ */
 }
 
 .equal-size {
     width: 100%;
-    height: 200px; /* กำหนดความสูงของภาพให้เท่ากัน */
-    object-fit: cover; /* ให้รูปภาพครอบพื้นที่ทั้งหมด */
-    transition: transform 0.3s ease; /* เพิ่ม transition สำหรับ hover */
+    height: 200px;
+    /* กำหนดความสูงของภาพให้เท่ากัน */
+    object-fit: cover;
+    /* ให้รูปภาพครอบพื้นที่ทั้งหมด */
+    transition: transform 0.3s ease;
+    /* เพิ่ม transition สำหรับ hover */
 }
 
 .equal-size:hover {
-    transform: scale(1.05); /* ขยายภาพเล็กน้อยเมื่อ hover */
+    transform: scale(1.05);
+    /* ขยายภาพเล็กน้อยเมื่อ hover */
     cursor: pointer;
 }
+
 /* ปรับขนาดโลโก้ Navbar */
 .navbar-brand {
     display: flex;
     align-items: center;
-    font-size: 20px;  /* ปรับขนาดฟอนต์ */
+    font-size: 20px;
+    /* ปรับขนาดฟอนต์ */
     font-weight: bold;
     text-decoration: none;
-    color: #333; /* สีของข้อความ */
+    color: #333;
+    /* สีของข้อความ */
 }
 
 .logo {
-    width: 30px; /* ปรับขนาดของโลโก้ให้เล็กลง */
+    width: 30px;
+    /* ปรับขนาดของโลโก้ให้เล็กลง */
     height: auto;
-    margin-right: 10px; /* ช่องว่างระหว่างโลโก้และข้อความ */
-}
-
-/* แก้ไข footer ให้ปรากฏขึ้น */
-footer {
-    background-color: #a09898;
-    color: rgb(134, 131, 131);
-    padding: 20px 0;
-    opacity: 0; /* ทำให้ footer ซ่อน */
-    transform: translateY(30px); /* เลื่อน footer ออก */
-    transition: opacity 1s ease, transform 1s ease; /* การเปลี่ยนแปลงเมื่อ footer ปรากฏ */
+    margin-right: 10px;
+    /* ช่องว่างระหว่างโลโก้และข้อความ */
 }
 
 
@@ -310,13 +320,16 @@ footer {
 .img-gallery {
     cursor: pointer;
     width: 100%;
-    height: 250px;  /* ความสูงของรูป */
-    object-fit: cover; /* ปรับขนาดรูปให้ไม่ผิดสัดส่วน */
+    height: 250px;
+    /* ความสูงของรูป */
+    object-fit: cover;
+    /* ปรับขนาดรูปให้ไม่ผิดสัดส่วน */
     transition: transform 0.3s ease;
 }
 
 .img-gallery:hover {
-    transform: scale(1.05); /* ลดการขยายขนาดตอน hover */
+    transform: scale(1.05);
+    /* ลดการขยายขนาดตอน hover */
 }
 
 /* Style for the navigation buttons */
@@ -360,7 +373,8 @@ footer {
 
 @media (max-width: 576px) {
     .img-gallery {
-        height: 150px; /* ปรับขนาดให้เล็กลงในหน้าจอขนาดเล็กสุด */
+        height: 150px;
+        /* ปรับขนาดให้เล็กลงในหน้าจอขนาดเล็กสุด */
     }
 
     #slider .carousel-item {
@@ -371,122 +385,126 @@ footer {
         font-size: 1.5rem;
     }
 }
+
 /* ส่วนของโครงสร้างที่ปรับปรุง */
 .image-text-container {
     display: flex;
     align-items: center;
-    gap: 15px; /* ระยะห่างระหว่างรูปภาพและข้อความ */
-    margin-bottom: 2.5rem; /* ระยะห่างด้านล่าง */
-    padding: 0 1rem; /* เพิ่ม padding ซ้าย-ขวา */
+    gap: 15px;
+    /* ระยะห่างระหว่างรูปภาพและข้อความ */
+    margin-bottom: 2.5rem;
+    /* ระยะห่างด้านล่าง */
+    padding: 0 1rem;
+    /* เพิ่ม padding ซ้าย-ขวา */
 }
 
 .image-left {
-    max-width: 350px; /* ลดความกว้างในเดสก์ท็อป */
-    height: auto; /* คงอัตราส่วนภาพ */
+    max-width: 350px;
+    /* ลดความกว้างในเดสก์ท็อป */
+    height: auto;
+    /* คงอัตราส่วนภาพ */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* เพิ่มเงาให้ดูนุ่ม */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    /* เพิ่มเงาให้ดูนุ่ม */
 }
 
 .text-right {
-    max-width: 55%; /* ลดขนาดข้อความ */
-    padding-left: 1rem; /* เพิ่มระยะห่างด้านซ้าย */
+    max-width: 55%;
+    /* ลดขนาดข้อความ */
+    padding-left: 1rem;
+    /* เพิ่มระยะห่างด้านซ้าย */
 }
 
 .text-right h2 {
     margin-top: 0;
-    font-size: 1.8rem; /* ขนาดหัวข้อในเดสก์ท็อป */
-    margin-bottom: 0.8rem; /* ระยะห่างระหว่างหัวข้อ */
+    font-size: 1.8rem;
+    /* ขนาดหัวข้อในเดสก์ท็อป */
+    margin-bottom: 0.8rem;
+    /* ระยะห่างระหว่างหัวข้อ */
 }
 
 .text-right p {
     margin-bottom: 0.8rem;
-    line-height: 1.7; /* เพิ่มความอ่านง่าย */
+    line-height: 1.7;
+    /* เพิ่มความอ่านง่าย */
 }
 
 /* Media Queries สำหรับมือถือ */
 @media (max-width: 768px) {
     .image-text-container {
-        flex-direction: column; /* จัดรูปแบบแนวตั้ง */
-        text-align: center; /* จัดข้อความกึ่งกลาง */
-        gap: 10px; /* ลดระยะห่าง */
+        flex-direction: column;
+        /* จัดรูปแบบแนวตั้ง */
+        text-align: center;
+        /* จัดข้อความกึ่งกลาง */
+        gap: 10px;
+        /* ลดระยะห่าง */
     }
 
     .image-left {
-        max-width: 100%; /* ปรับรูปภาพให้เต็มจอ */
-        margin-bottom: 15px; /* เพิ่มระยะห่างด้านล่าง */
+        max-width: 100%;
+        /* ปรับรูปภาพให้เต็มจอ */
+        margin-bottom: 15px;
+        /* เพิ่มระยะห่างด้านล่าง */
     }
 
     .text-right {
-        max-width: 100%; /* ขยายข้อความให้พอดีกับหน้าจอ */
-        padding: 0; /* ลบ padding ด้านซ้าย */
+        max-width: 100%;
+        /* ขยายข้อความให้พอดีกับหน้าจอ */
+        padding: 0;
+        /* ลบ padding ด้านซ้าย */
     }
 
     .text-right h2 {
-        font-size: 1.5rem; /* ลดขนาดหัวข้อในมือถือ */
+        font-size: 1.5rem;
+        /* ลดขนาดหัวข้อในมือถือ */
     }
 
     .text-right p {
-        line-height: 1.6; /* เพิ่มระยะบรรทัดในข้อความ */
+        line-height: 1.6;
+        /* เพิ่มระยะบรรทัดในข้อความ */
     }
 }
 
-/* Footer Styling */
-footer {
-    font-size: 0.9rem;
-    text-align: center; /* จัดกึ่งกลางข้อความใน footer */
-}
-
-footer.show {
-    background-color: #212529;
-    transition: background-color 0.3s ease;
-}
-
-footer p {
-    margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    footer {
-        font-size: 0.8rem; /* ลดขนาดข้อความ footer */
-    }
-}
 .image-container {
     overflow: hidden;
     border-radius: 8px;
-  }
+}
 
-  .image-hover {
+.image-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+}
 
-  .image-hover:hover {
+.image-hover:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  .navbar.sticky-top {
+}
+
+.navbar.sticky-top {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
-  }
-   /* Animation Styles */
-   .animation {
+}
+
+/* Animation Styles */
+.animation {
     opacity: 0;
     transform: translateX(0);
     transition: opacity 1s ease, transform 1s ease;
-  }
+}
 
-  .fade-in-left {
+.fade-in-left {
     transform: translateX(-100px);
-  }
+}
 
-  .fade-in-right {
+.fade-in-right {
     transform: translateX(100px);
-  }
+}
 
-  .animation.show {
+.animation.show {
     opacity: 1;
     transform: translateX(0);
-  }
-  #close-lightbox {
+}
+
+#close-lightbox {
     background-color: #fff;
     border: none;
     padding: 10px 20px;
@@ -520,21 +538,26 @@ footer p {
     margin: 5% auto;
     display: block;
 }
+
 .card-group {
     margin-top: 30px;
     display: flex;
-    gap: 15px; /* กำหนดระยะห่างระหว่างการ์ด */
+    gap: 15px;
+    /* กำหนดระยะห่างระหว่างการ์ด */
 }
 
 .card-img-container {
     position: relative;
-    height: 250px; /* กำหนดความสูงของรูปภาพให้เท่ากัน */
+    height: 250px;
+    /* กำหนดความสูงของรูปภาพให้เท่ากัน */
     overflow: hidden;
 }
 
 .card-img-top {
-    object-fit: cover; /* ใช้ object-fit ให้รูปภาพเต็มพื้นที่และไม่บิดเบือน */
-    height: 100%; /* ทำให้รูปยืดเต็มพื้นที่ของ container */
+    object-fit: cover;
+    /* ใช้ object-fit ให้รูปภาพเต็มพื้นที่และไม่บิดเบือน */
+    height: 100%;
+    /* ทำให้รูปยืดเต็มพื้นที่ของ container */
     width: 100%;
 }
 
@@ -542,23 +565,28 @@ footer p {
     color: gold;
     margin-right: 5px;
 }
+
 /* ขนาดปกติสำหรับ Desktop หรือจอใหญ่ */
 .card-group {
     margin-top: 30px;
     display: flex;
-    gap: 15px; /* กำหนดระยะห่างระหว่างการ์ด */
+    gap: 15px;
+    /* กำหนดระยะห่างระหว่างการ์ด */
     justify-content: space-between;
 }
 
 .card-img-container {
     position: relative;
-    height: 250px; /* กำหนดความสูงของรูปภาพให้เท่ากัน */
+    height: 250px;
+    /* กำหนดความสูงของรูปภาพให้เท่ากัน */
     overflow: hidden;
 }
 
 .card-img-top {
-    object-fit: cover; /* ใช้ object-fit ให้รูปภาพเต็มพื้นที่และไม่บิดเบือน */
-    height: 100%; /* ทำให้รูปยืดเต็มพื้นที่ของ container */
+    object-fit: cover;
+    /* ใช้ object-fit ให้รูปภาพเต็มพื้นที่และไม่บิดเบือน */
+    height: 100%;
+    /* ทำให้รูปยืดเต็มพื้นที่ของ container */
     width: 100%;
 }
 
@@ -579,49 +607,217 @@ footer p {
 .card {
     width: 100%;
     margin-bottom: 20px;
-    border: 1px solid #ddd; /* เพิ่มกรอบให้การ์ด */
-    border-radius: 10px; /* ทำมุมให้การ์ดนุ่มขึ้น */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้การ์ด */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่ม transition ให้กับการย้ายตำแหน่งและเงา */
+    border: 1px solid #ddd;
+    /* เพิ่มกรอบให้การ์ด */
+    border-radius: 10px;
+    /* ทำมุมให้การ์ดนุ่มขึ้น */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาให้การ์ด */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* เพิ่ม transition ให้กับการย้ายตำแหน่งและเงา */
 }
 
 /* กำหนด hover effect สำหรับการ์ด */
 .card:hover {
-    transform: translateY(-10px); /* เลื่อนการ์ดขึ้นเล็กน้อยเมื่อ hover */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+    transform: translateY(-10px);
+    /* เลื่อนการ์ดขึ้นเล็กน้อยเมื่อ hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาเมื่อ hover */
 }
 
 /* Responsive - สำหรับมือถือ (Screen width < 768px) */
 @media (max-width: 768px) {
     .card-group {
-        flex-direction: column; /* จัดการ์ดเป็นแถวเดียว */
-        gap: 20px; /* เพิ่มระยะห่างระหว่างการ์ด */
+        flex-direction: column;
+        /* จัดการ์ดเป็นแถวเดียว */
+        gap: 20px;
+        /* เพิ่มระยะห่างระหว่างการ์ด */
     }
 
     .card-img-container {
-        height: 200px; /* ลดความสูงของรูปภาพสำหรับมือถือ */
+        height: 200px;
+        /* ลดความสูงของรูปภาพสำหรับมือถือ */
     }
 
     .card-body {
-        padding: 15px; /* ลด padding ภายในการ์ด */
+        padding: 15px;
+        /* ลด padding ภายในการ์ด */
     }
 
     .card-footer {
-        padding: 8px; /* ลด padding ของ footer */
+        padding: 8px;
+        /* ลด padding ของ footer */
     }
 }
 
 /* Responsive - สำหรับหน้าจอเล็ก (Screen width < 576px) */
 @media (max-width: 576px) {
     .card-img-container {
-        height: 180px; /* ลดความสูงของรูปภาพลงอีก */
+        height: 180px;
+        /* ลดความสูงของรูปภาพลงอีก */
     }
 
     .card-body {
-        padding: 10px; /* ลด padding ของการ์ด */
+        padding: 10px;
+        /* ลด padding ของการ์ด */
     }
 
     .card-footer {
-        padding: 6px; /* ลด padding ของ footer */
+        padding: 6px;
+        /* ลด padding ของ footer */
     }
 }
+
+/* Custom Styling */
+.stars i {
+    color: gold;
+}
+
+.card-body {
+    background-color: #f8f9fa;
+}
+
+.card-footer {
+    background-color: #f1f1f1;
+}
+
+.image-preview {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.image-preview img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1010;
+}
+    /* Custom Styling */
+    .stars i {
+        color: gold;
+    }
+
+    .card-body {
+        background-color: #f8f9fa;
+    }
+
+    .card-footer {
+        background-color: #f1f1f1;
+    }
+
+    .image-preview {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .image-preview img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1010;
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        font-size: 30px;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1005;
+    }
+
+    .prev-btn {
+        left: 20px;
+    }
+
+    .next-btn {
+        right: 20px;
+    }
+     /* สไตล์สำหรับปุ่ม Scroll to Top */
+     #scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #0056b3;
+    }
+
+    /* การปรับขนาดของปุ่มเมื่อ hover */
+    #scrollToTopBtn:focus {
+        outline: none;
+    }
+
+    /* เพิ่มสไตล์สำหรับมือถือ */
+    @media (max-width: 768px) {
+        #scrollToTopBtn {
+            bottom: 10px;
+            right: 10px;
+            font-size: 18px;
+            padding: 12px;
+        }
+    }
+    footer {
+        text-align: center; /* จัดข้อความให้ตรงกลาง */
+        padding: 20px 0; /* กำหนด padding ด้านบนและล่าง */
+        background-color: #f1f1f1; /* สีพื้นหลังของฟูเตอร์ */
+    }
+    
+    footer a {
+        margin: 0 10px; /* กำหนดระยะห่างระหว่างไอคอน */
+        color: inherit; /* ให้สีของไอคอนตามสีของข้อความ */
+        text-decoration: none; /* ลบขีดเส้นใต้จากลิงก์ */
+    }
+    
+    footer i {
+        font-size: 24px; /* กำหนดขนาดของไอคอน */
+    }
+    
