@@ -123,7 +123,16 @@
     color: black;
     background-attachment: fixed;
 }
-
+#more {
+    min-height: 200px;
+    position: relative;
+    background-image: url("https://cdn.pixabay.com/photo/2024/10/28/06/12/river-9155147_1280.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: black;
+    background-attachment: fixed;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -808,7 +817,7 @@ footer.show {
     footer {
         text-align: center; /* จัดข้อความให้ตรงกลาง */
         padding: 20px 0; /* กำหนด padding ด้านบนและล่าง */
-        background-color: #f1f1f1; /* สีพื้นหลังของฟูเตอร์ */
+        background-color: #ffffff; /* สีพื้นหลังของฟูเตอร์ */
     }
     
     footer a {
@@ -821,3 +830,71 @@ footer.show {
         font-size: 24px; /* กำหนดขนาดของไอคอน */
     }
     
+    /* ทำให้ปุ่มดูเพิ่มเติมเหมือนปุ่มกด */
+    .btn-more {
+        display: inline-block;
+        background-color: #007bff; /* สีพื้นหลัง */
+        color: white; /* สีตัวอักษร */
+        padding: 10px 20px; /* ขนาดของปุ่ม */
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 20px; /* เพิ่มระยะห่างจากเนื้อหา */
+    }
+
+    .btn-more:hover {
+        background-color: #0056b3;
+    }
+
+    /* จัดการกับการแสดงผลของ preview image */
+    .image-preview {
+        display: none;
+        position: fixed; /* ทำให้มันอยู่ที่ตำแหน่งคงที่บนหน้าจอ */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* ให้แสดงอยู่ข้างหน้า */
+    }
+
+    .image-preview img {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* สไตล์ปุ่ม Scroll to Top */
+    #scrollToTopBtn {
+        display: none; /* ซ่อนปุ่มในเริ่มต้น */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #0056b3;
+    }
