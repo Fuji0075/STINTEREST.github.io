@@ -1,5 +1,96 @@
+/* General Navbar Styles */
+.navbar {
+    font-family: 'Arial', sans-serif;  /* ใช้ฟอนต์ที่อ่านง่าย */
+    font-weight: 600;  /* ใช้ฟอนต์หนาให้ดูเด่น */
+    letter-spacing: 1px;  /* เพิ่มระยะห่างระหว่างตัวอักษร */
+}
+
+/* Navbar Background and Shadow */
+.navbar-dark.bg-dark {
+    background-color: #1f1f1f !important;  /* สีพื้นหลังเข้ม */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* เพิ่มเงาให้ดูมีมิติ */
+}
+
+/* Logo */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #fff;  /* สีของชื่อแบรนด์ */
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; /* เพิ่มระยะห่างระหว่างโลโก้และชื่อ */
+}
+
+.navbar-brand span {
+    font-size: 18px;  /* ขนาดฟอนต์ของชื่อแบรนด์ */
+    font-weight: 700; /* ฟอนต์หนาเพื่อให้เด่น */
+    text-transform: uppercase; /* ทำให้ชื่อแบรนด์เป็นตัวพิมพ์ใหญ่ทั้งหมด */
+}
+
+/* Toggler Button */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;  /* เปลี่ยนสีของไอคอนท็อกเกิลเป็นขาว */
+}
+
+/* Navbar Links */
+.nav-link {
+    color: #fff !important;  /* สีตัวอักษรเมนู */
+    font-size: 16px;
+    padding: 12px 18px;
+    transition: all 0.3s ease-in-out;  /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวล */
+}
+
+.nav-link:hover {
+    color: #f8c34d;  /* เปลี่ยนสีเมื่อ hover */
+    text-decoration: none;  /* ลบขีดเส้นใต้ */
+    transform: scale(1.1);  /* เพิ่มขนาดเล็กน้อยเมื่อ hover */
+}
+
+/* Active Menu Link */
+.nav-link.active {
+    color: #f8c34d !important;  /* เปลี่ยนสีของลิงก์ที่เลือก */
+    font-weight: bold;  /* ทำให้เมนูที่เลือกหนาขึ้น */
+}
+
+/* Navbar Menu Layout */
+.navbar-nav {
+    display: flex; /* ใช้ flexbox เพื่อจัดการให้เมนูอยู่ในแถวเดียว */
+    align-items: center;
+    justify-content: flex-end; /* จัดให้อยู่ทางขวา */
+    margin-left: 0;
+    padding-left: 0; /* ลบค่าเริ่มต้นของ padding และ margin */
+}
+
+.nav-item {
+    margin-left: 20px; /* เพิ่มระยะห่างระหว่างไอเท็มในเมนู */
+}
+
+/* Mobile Navbar */
+@media (max-width: 991px) {
+    .navbar-nav {
+        flex-direction: column; /* เปลี่ยนการจัดเรียงในมือถือเป็นแนวตั้ง */
+        text-align: center;
+    }
+
+    .nav-item {
+        margin-left: 0;
+        margin-bottom: 15px; /* เพิ่มระยะห่างระหว่างไอเท็มในมือถือ */
+    }
+
+    .nav-link {
+        padding: 10px 15px;
+    }
+}
 .carousel-item {
-    height: 500px;
+    height: 600px;
     /* ความสูงเริ่มต้นสำหรับหน้าจอใหญ่ */
     position: relative;
 }
@@ -227,37 +318,6 @@ footer.show {
     cursor: pointer;
 }
 
-/* ปรับขนาดโลโก้ Navbar */
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    /* ปรับขนาดฟอนต์ */
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-    /* สีของข้อความ */
-}
-
-/* ปรับขนาดโลโก้ให้เหมาะสม */
-.navbar .logo {
-    height: auto; /* ให้โลโก้มีสัดส่วนคงที่ */
-    max-height: 60px; /* ขนาดสูงสุดที่เหมาะสม */
-    width: auto; /* ปรับอัตโนมัติ */
-}
-
-/* ทำให้โลโก้มีเงาเพิ่มมิติ */
-.navbar .logo {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* เงาสีดำให้ดูเด่นขึ้น */
-    border-radius: 8px; /* เพิ่มมุมโค้งเล็กน้อย */
-}
-
-/* ทำให้โลโก้สวยขึ้นเวลา Hover */
-.navbar .logo:hover {
-    transform: scale(1.1); /* ขยายขนาดโลโก้เล็กน้อยเมื่อเอาเมาส์ไปวาง */
-    transition: all 0.3s ease; /* เพิ่ม transition ให้ลื่นไหล */
-}
-
 @keyframes slideInLeft {
     from {
         transform: translateX(-100%);
@@ -351,28 +411,7 @@ footer.show {
     /* ลดการขยายขนาดตอน hover */
 }
 
-/* Style for the navigation buttons */
-.nav-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.nav-buttons button {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.nav-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
+/*  */
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -498,10 +537,6 @@ footer.show {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.navbar.sticky-top {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
-}
 
 /* Animation Styles */
 .animation {
@@ -769,18 +804,6 @@ footer.show {
         cursor: pointer;
         z-index: 1010;
     }
-
-    .nav-btn {
-        position: absolute;
-        top: 50%;
-        font-size: 30px;
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 10px;
-        cursor: pointer;
-        z-index: 1005;
-    }
-
     .prev-btn {
         left: 20px;
     }
@@ -908,3 +931,4 @@ footer.show {
     #scrollToTopBtn:hover {
         background-color: #0056b3;
     }
+    
