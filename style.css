@@ -239,14 +239,24 @@ footer.show {
     /* สีของข้อความ */
 }
 
-.logo {
-    width: 30px;
-    /* ปรับขนาดของโลโก้ให้เล็กลง */
-    height: auto;
-    margin-right: 10px;
-    /* ช่องว่างระหว่างโลโก้และข้อความ */
+/* ปรับขนาดโลโก้ให้เหมาะสม */
+.navbar .logo {
+    height: auto; /* ให้โลโก้มีสัดส่วนคงที่ */
+    max-height: 60px; /* ขนาดสูงสุดที่เหมาะสม */
+    width: auto; /* ปรับอัตโนมัติ */
 }
 
+/* ทำให้โลโก้มีเงาเพิ่มมิติ */
+.navbar .logo {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* เงาสีดำให้ดูเด่นขึ้น */
+    border-radius: 8px; /* เพิ่มมุมโค้งเล็กน้อย */
+}
+
+/* ทำให้โลโก้สวยขึ้นเวลา Hover */
+.navbar .logo:hover {
+    transform: scale(1.1); /* ขยายขนาดโลโก้เล็กน้อยเมื่อเอาเมาส์ไปวาง */
+    transition: all 0.3s ease; /* เพิ่ม transition ให้ลื่นไหล */
+}
 
 @keyframes slideInLeft {
     from {
